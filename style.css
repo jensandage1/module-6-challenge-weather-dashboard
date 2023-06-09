@@ -1,0 +1,36 @@
+h1 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, lightblue, darkblue);
+    padding: 5vh;
+    text-align: center;
+}
+
+.search-container {
+    border: solid black 5px;
+    width: 25%;
+    margin: 5vh;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.current-city {
+    display: flex;
+    flex-direction: column;
+    margin: 5vh;
+}
+
+.five-day-forecast {
+    display: flex;
+    flex-direction: column;
+    margin: 5vh;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
