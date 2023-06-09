@@ -1,6 +1,6 @@
 var APIKey = "e681938589867340f32e0fe262dead4c";
 var cityInput = document.getElementById("search-city");
-var queryUrl = "https://openweathermap.org/api";
+var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q={chicago}&appid={e681938589867340f32e0fe262dead4c}";
 
 function getApi() {
    
@@ -9,7 +9,7 @@ function getApi() {
         return response.json();
     })
     .then(function (data) {
-        
+
     })
     
 }
