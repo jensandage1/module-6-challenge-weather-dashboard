@@ -1,5 +1,5 @@
 var APIKey = "4023e75f24d6e229beec978ad1d80ad9"; 
-var cityName = "Chicago"; 
+var cityName = document.getElementById("search-city"); //<-not working to pull from input 
 var queryUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}`; 
 
 
@@ -11,7 +11,7 @@ function getApi() {
     .then(function (data) {
         console.log(data); // This will output the data you got from the API to the console.
         var currentInfo = document.getElementById("city-conditions");//i want the current conditions for searched city to go here.
-        currentInfo.innterHTML= (data); 
+        currentInfo.innterHTML= data; 
     })
     .catch(function (error) {
         console.log('Error:', error); // If something goes wrong, this will output the error.
@@ -22,10 +22,14 @@ function getApi() {
 }
 getApi();
 
-$("#container > #search-button").click(() => {
+function searchCity(){
+    $("#container > .search-button").click(() => {
     let textInput = $("#container > #search-city").val();
     localStorage.setItem("city" , textInput)
-});
+})
+}
+searchCity();
+
 
 function displayPreviousCity(){
     $("#container > #search-city").val(localStorage.getItem("city"));
@@ -36,6 +40,3 @@ displayPreviousCity();
 //save searched city to local storage
 //get from local storage and display last 5 searched cities 
 
-
-
-cityName.textContent=("");
