@@ -11,7 +11,7 @@
  <header>
     <h1>Weather Dashboard</h1>
 </header> 
-<div class="flex-container">
+<div id="container" class="flex-container">
     <div class="search-container">
         <div> 
             <h2>Search for a city:</h2>
@@ -20,15 +20,26 @@
             </form>
             <button type="submit" class="search-button">search</button>
         </div>
+        <ul>
+            <li></li>
+        </ul>
     </div>
 
     <div class="current-city-container">
-        <h3>Current city conditions</h3>
+
+        <div class="current-weather-info">
+            <h3>Current city conditions</h3>
+        <div id="city-conditions"></div>
+            </div>
+    
         <div class="card">
         </div>
+
         <h3>5 Day Forecast</h3>
     </div>
+</div>
 </div>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
