@@ -3,6 +3,7 @@ var APIKey = "4023e75f24d6e229beec978ad1d80ad9";
 var searchBtn = document.getElementById("search-button");
 var inputField = document.getElementById("search-city");
 var cityName;
+var fiveDayForecast = document.getElementById("five-day-forecast");
 
 searchBtn.onclick = getInput;
 
@@ -21,7 +22,7 @@ function getApi() {
     .then(function (data) {
         console.log(data); // This will output the data you got from the API to the console.
         var currentInfo = document.getElementById("city-conditions");//i want the current conditions for searched city to go here.
-        currentInfo.innterHTML= data; 
+        currentInfo.innerText= data; 
         var lat = data.coord.lat;
         var lon = data.coord.lon;
         getWeather(lat,lon);
@@ -42,15 +43,14 @@ function getWeather(lat, lon) {
     })
     .then (function (data2) {
         console.log(data2);
-    })
-   // for(var i=0; i < data2.length; i+8) {
-    //data2.value[i];
-   // }
+
+    var dailyForecast = data2.list;
+    for(let i=0; i < dailyForecast.length; i+=8) {
+    fiveDayForecast.textContent = dailyForecast[i];
+    }
+})
 
 }
-
-//`https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`
-//getApi();
 
 function searchCity(){
     $(".flex-container > .search-button").click(() => {
