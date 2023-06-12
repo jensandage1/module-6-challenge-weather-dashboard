@@ -6,8 +6,17 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    text-decoration: underline;
+}
+
+ul {
+    font-size: 20px;
+    text-align: left;
+}
+
 .search-container {
-    border: solid black 5px;
+    border: solid black 3px;
     width: 25%;
     margin: 5vh;
     padding: 3vh;
@@ -28,7 +37,7 @@ h1 {
 .current-weather-info {
     background-color: lightblue;
     padding: 20px;
-    border: solid black 5px;
+    border: solid black 3px;
 }
 
 .five-day-forecast {
