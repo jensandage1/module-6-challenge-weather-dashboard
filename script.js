@@ -3,6 +3,7 @@ var APIKey = "4023e75f24d6e229beec978ad1d80ad9";
 var searchBtn = document.getElementById("search-button");
 var inputField = document.getElementById("search-city");
 var cityName;
+var citiesForm = document.getElementById("cities-form");
 
 
 
@@ -108,21 +109,29 @@ function getWeather(lat, lon) {
 });
 }
 
+function searchCity(){
+    $(".flex-container > .search-button").click(() => {
+    let textInput = $("#container > #search-city").val();
+    localStorage.setItem("city" , textInput)
+})
+}
+searchCity();
+
 var previousCity = document.getElementById("list-item1")
 
 function displayPreviousCity(){
+    $(".flex-container > #search-city").val(localStorage.getItem("city"));
     let displayOutput = localStorage.getItem("nameOfCity");
     previousCity.innerText = displayOutput;
 }
 displayPreviousCity();
 
+//click event - display searched city current and 5 day forecast
+//save searched city to local storage
 searchBtn.addEventListener("click", function setCity () {
     let textInput = inputField.value;
     localStorage.setItem("nameOfCity", textInput);
 });
-
-
-
 
 
 
