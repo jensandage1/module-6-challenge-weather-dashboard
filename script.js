@@ -47,7 +47,28 @@ function getApi() {
         var logErr = document.getElementById("search-city");
         logErr.innerText = "please check your spelling and try again."
     });
+
+function displayIcons () {
+    var sunny = document.querySelectorAll("fa-sun");
+    var cloudy = document.querySelectorAll("fa-cloud") ;
+    var rainy = document.querySelectorAll("fa-cloud-rain"); 
+    if(data.weather[0].main === "Clouds") {
+        cloudy.style.display = "block";
+    } else if (data.weather[0].main === "Sun") {
+        sunny.style.display = "block";
+    } else {
+        rainy.style.display = "block";
+    }
+    }
+searchBtn.addEventListener("click", displayIcons);
 }
+
+
+       
+
+
+
+
 
 function getWeather(lat, lon) {
     var queryUrl2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}&units=imperial`;
@@ -144,7 +165,9 @@ function displaySearchedCities() {
         cityElement.append(listItem);
         $(listItem).on("click", function(){
     cityName = searchedCities[i];
+
     getApi();
+    
         });
 
     
