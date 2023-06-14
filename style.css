@@ -1,3 +1,7 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -54,4 +58,51 @@ ul {
 
 li {
     list-style-type: none;
+}
+
+.forecast-layout {
+    display: flex;
+    flex-direction: row;
+}
+
+#five-day-forecast1 {
+    background-color: rgb(35, 22, 92);
+    margin: 1vh;
+    padding: 2vh;
+    line-height: 1.5;
+    color: white;
+    
+  
+}
+
+#five-day-forecast2 {
+    background-color: rgb(35, 22, 92);
+    margin: 1vh;
+    padding: 2vh;
+    line-height: 1.5;
+    color: white;
+}
+
+#five-day-forecast3 {
+    background-color: rgb(35, 22, 92);
+    margin: 1vh;
+    padding: 2vh;
+    line-height: 1.5;
+    color: white;
+}
+
+#five-day-forecast4 {
+    background-color: rgb(35, 22, 92);
+    margin: 1vh;
+    padding: 2vh;
+    line-height: 1.5;
+    color: white;
+}
+
+#five-day-forecast5 {
+    background-color: rgb(35, 22, 92);
+    margin: 1vh;
+    padding: 2vh;
+    line-height: 1.5;
+    color: white;
 }
